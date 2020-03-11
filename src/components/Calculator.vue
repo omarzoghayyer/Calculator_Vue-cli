@@ -1,5 +1,5 @@
 <template>
-  <div class="calculator-grid"  >
+  <div class="calculator-grid">
     
     <div type="number" class="mid-grid">{{current || '0'}} </div>
     <div @click="power" class= "btn operator">^</div>
@@ -74,16 +74,15 @@ export default {
     },
 
     append(number) {
-      if(this.operatorClicked) {
+ if(this.operatorClicked) {
         this.current ='';
         this.operatorClicked = false;
       }
         this.current = `${this.current}${number}`
-
   },
     dot(){
       if(this.current.indexOf('.') === -1) {
-        this.append('.'); 
+        this.append('.');
       }
     },
     divide() {
@@ -126,20 +125,24 @@ export default {
 
 
 <style scoped>
+
+
 .calculator-grid{
+  
   margin: 0 auto;
   width: 350px;
   font-size: 45px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-auto-rows: minmax(30px, auto);
-  background-color: rgb(255, 255, 255);
 }
 
 .mid-grid{
   overflow: hidden;
   background-color: rgb(237, 248, 239);
   grid-column: 1 /5;
+  height: 100px;
+  font-size: 40px;
   border: solid 1px rgb(14, 13, 13);
 }
 .mid-grid:hover{
